@@ -38,7 +38,7 @@ export default new Vuex.Store({
       );
 
       const unfilteredPage = paginate(arraySortByCategory, limit, page);
-      console.log(unfilteredPage);
+
       if (!searchTerm) {
         state.filteredProducts = [];
         return unfilteredPage;
