@@ -30,15 +30,14 @@
 		>
 		</v-select> -->
 
-    <select v-model="selected">
-      <!-- inline object literal -->
+    <!-- <select v-model="selected">
       <option
         v-for="option in options"
         :key="option.id"
         :value="option.id"
         :label="option.label"
       ></option>
-    </select>
+    </select> -->
   </div>
 </template>
 
@@ -84,21 +83,10 @@ export default {
         { id: 1, label: 'Name' },
         { id: 2, label: 'Recently Added' },
       ],
+      searchTerm: '',
     };
   },
   computed: {
-    searchTerm: {
-      get() {
-        return this.debouncedInput;
-      },
-      set(val) {
-        if (this.timeout) clearTimeout(this.timeout);
-        this.timeout = setTimeout(() => {
-          this.debouncedInput = val;
-          this.$store.commit('setSearchTerm', this.debouncedInput);
-        }, 300);
-      },
-    },
     // selected() {
     // 	console.log(
     // 		"🚀 ~ file: ActionBar.vue ~ line 105 ~ selected ~ this.$store.getters.getCategory",
