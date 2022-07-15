@@ -1,4 +1,4 @@
-import makeId from './makeId'
+import makeId from './makeId';
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -7,22 +7,23 @@ function getRandomInt(min, max) {
 }
 
 function randomDate(start, end) {
-  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  return new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
 }
 
-
-
 export default function makeProducts(num) {
-  const products = []
+  const products = [];
   for (let i = 0; i < num; i++) {
     products.push({
       id: makeId(),
-      imageUrl: 'https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg',
+      imageUrl:
+        'https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg',
       name: `product${i}`,
       description: `Product ${i} description`,
       price: getRandomInt(50, 500),
-      dateAdded: randomDate(new Date(2010, 0, 1), new Date()).getTime()
-    })
+      dateAdded: randomDate(new Date(2010, 0, 1), new Date()).getTime(),
+    });
   }
   return products;
 }
