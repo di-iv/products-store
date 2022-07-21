@@ -18,6 +18,9 @@
 import ProductCard from '@/components/ProductCard';
 export default {
   name: 'ProductList',
+  components: {
+    ProductCard
+  },
   computed: {
     productListPage() {
       return this.$store.getters.productListPage;
@@ -26,6 +29,5 @@ export default {
   created() {
     this.$store.dispatch('getProducts')
   },
-  components: { ProductCard },
 };
 </script>
