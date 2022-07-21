@@ -1,6 +1,6 @@
 <template>
   <div class="product-card main-border flex j-between">
-    <img class="img" :src="product.imageUrl || defaultUrl" alt="" />
+    <img class="img" :src="product.image || defaultUrl" alt="" />
     <div class="details flex column j-start">
       <h4 class="title">{{ product.name }}</h4>
       <p class="description">{{ product.description }}</p>
