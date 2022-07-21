@@ -17,7 +17,7 @@
 <script>
 import ProductCard from '@/components/ProductCard';
 export default {
-  name: 'product-list',
+  name: 'ProductList',
   computed: {
     productListPage() {
       return this.$store.getters.productListPage;
