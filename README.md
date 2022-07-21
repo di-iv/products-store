@@ -1,0 +1,7 @@
+You need to change the getting of products in this application
+Now they are being formed on the frontend, you need to make them get from the request from the api
+
+Api: https://fakestoreapi.com/docs
+Needed URL: https://fakestoreapi.com/products
+
+After that, you need to correct the styles so that the cards look nice, the texts in the cards should be displayed in a maximum of 3 lines, if they are longer, then a triple dot (...) is put
