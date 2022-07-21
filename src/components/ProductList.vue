@@ -23,6 +23,9 @@ export default {
       return this.$store.getters.productListPage;
     },
   },
+  created() {
+    this.$store.dispatch('getProducts')
+  },
   components: { ProductCard },
 };
 </script>

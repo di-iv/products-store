@@ -1,3 +1,4 @@
+import Products from '@/services/Products';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import makeProducts from '../utils/productFactory';
@@ -96,7 +97,15 @@ export default new Vuex.Store({
     setPage(state, newPage) {
       state.page = newPage;
     },
+    setProducts(state, products) {
+      state.products = products;
+    }
   },
-  actions: {},
+  actions: {
+    async getProducts({commit}) {
+      const products = await Products.get();
+      commit('setProducts', products);
+    }
+  },
   modules: {},
 });
