@@ -21,32 +21,6 @@
         oninput=""
       >
     </div>
-
-    <!-- <select
-			name="category-select"
-			class="category-select main-border"
-			v-model="category"
-		>
-			<option value="date">Recently Added</option>
-			<option value="name">Name</option>
-		</select> -->
-    <!-- <v-select
-			name="category-select"
-			class="category-select main-border"
-			v-model="selected"
-			:options="options"
-			label="labels"
-		>
-		</v-select> -->
-
-    <!-- <select v-model="selected">
-      <option
-        v-for="option in options"
-        :key="option.id"
-        :value="option.id"
-        :label="option.label"
-      ></option>
-    </select> -->
   </div>
 </template>
 
@@ -94,23 +68,6 @@ export default {
       ],
       searchTerm: '',
     };
-  },
-  computed: {
-    // selected() {
-    // 	console.log(
-    // 		"🚀 ~ file: ActionBar.vue ~ line 105 ~ selected ~ this.$store.getters.getCategory",
-    // 		this.$store.getters.getCategory
-    // 	);
-    // 	return this.$store.getters.getCategory;
-    // },
-    selected: {
-      get: function () {
-        return this.$store.getters.getCategory;
-      },
-      set: function () {
-        this.$store.commit('toggleCategory');
-      },
-    },
   },
   methods: {
     addNew() {
