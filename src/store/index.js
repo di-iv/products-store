@@ -1,9 +1,6 @@
 import Products from '@/services/Products';
 import Vue from 'vue';
 import Vuex from 'vuex';
-import makeProducts from '../utils/productFactory';
-
-const mockData = makeProducts(20);
 
 function paginate(array, page_size, page_number) {
   return array.slice(
@@ -16,7 +13,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    products: mockData,
+    products: [],
     filteredProducts: [],
     page: 0,
     limit: 4,
