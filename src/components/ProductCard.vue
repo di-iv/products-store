@@ -1,11 +1,24 @@
 <template>
   <div class="product-card main-border flex j-between">
-    <img class="img" :src="product.image || defaultUrl" alt="" />
+    <img
+      class="img"
+      :src="product.image || defaultUrl"
+      alt=""
+    >
     <div class="details flex column j-start">
-      <h4 class="title">{{ product.name }}</h4>
-      <p class="description">{{ product.description }}</p>
+      <h4 class="title">
+        {{ product.name }}
+      </h4>
+      <p class="description">
+        {{ product.description }}
+      </p>
     </div>
-    <router-link class="btn" :to="{name: 'Product', params: {id: product.id}}">Details</router-link>
+    <router-link
+      class="btn"
+      :to="{name: 'Product', params: {id: product.id}}"
+    >
+      Details
+    </router-link>
   </div>
 </template>
 
@@ -40,19 +53,19 @@
 
 <script>
 export default {
-  data() {
-    return {
-      defaultUrl:
-        'https://wtwp.com/wp-content/uploads/2015/06/placeholder-image-300x225.png',
-    };
-  },
+  name: 'ProductCard',
   props: {
     product: {
       type: Object,
       required: true,
     },
   },
-  name: 'product-card',
+  data() {
+    return {
+      defaultUrl:
+        'https://wtwp.com/wp-content/uploads/2015/06/placeholder-image-300x225.png',
+    };
+  },
   methods: {
     setSelectedProduct() {
       this.$store.commit('setSelectedProduct', this.product.id);

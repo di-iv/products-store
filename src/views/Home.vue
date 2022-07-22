@@ -1,12 +1,12 @@
 <template>
-	<div class="home flex column">
-		<action-bar />
-		<div class="products-container flex j-between">
-			<product-list />
-			<product-details />
-		</div>
-		<pagination />
-	</div>
+  <div class="home flex column">
+    <action-bar />
+    <div class="products-container flex j-between">
+      <product-list />
+      <product-details />
+    </div>
+    <pagination />
+  </div>
 </template>
 
 <style lang="scss">

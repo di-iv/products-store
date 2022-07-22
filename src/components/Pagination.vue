@@ -1,32 +1,40 @@
 <template>
-	<ul class="pagination" v-if="productListPage.length">
-		<li class="page-item">
-			<button type="button" class="page-link" v-if="page !== 0" @click="page--">
-				Previous
-			</button>
-		</li>
-		<li class="page-item">
-			<button
-				type="button"
-				class="page-link"
-				v-for="(idx, pageNumber) in pagesCount"
-				:key="idx"
-				@click="page = pageNumber"
-			>
-				{{ pageNumber + 1 }}
-			</button>
-		</li>
-		<li class="page-item">
-			<button
-				type="button"
-				@click="page++"
-				v-if="page < pagesCount-1"
-				class="page-link"
-			>
-				Next
-			</button>
-		</li>
-	</ul>
+  <ul
+    v-if="productListPage.length"
+    class="pagination"
+  >
+    <li class="page-item">
+      <button
+        v-if="page !== 0"
+        type="button"
+        class="page-link"
+        @click="page--"
+      >
+        Previous
+      </button>
+    </li>
+    <li class="page-item">
+      <button
+        v-for="(idx, pageNumber) in pagesCount"
+        :key="idx"
+        type="button"
+        class="page-link"
+        @click="page = pageNumber"
+      >
+        {{ pageNumber + 1 }}
+      </button>
+    </li>
+    <li class="page-item">
+      <button
+        v-if="page < pagesCount-1"
+        type="button"
+        class="page-link"
+        @click="page++"
+      >
+        Next
+      </button>
+    </li>
+  </ul>
 </template>
 
 <style lang="scss" scoped>
@@ -49,7 +57,7 @@
 
 <script>
 export default {
-	name: "Pagination",
+	name: 'Pagination',
 	computed: {
 		getPaginationData() {
 			return this.$store.getters.getPaginationData;

@@ -1,5 +1,8 @@
 <template>
-  <div id="app" class="flex column">
+  <div
+    id="app"
+    class="flex column"
+  >
     <my-nav />
     <router-view />
   </div>

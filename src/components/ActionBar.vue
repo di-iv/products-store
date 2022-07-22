@@ -1,16 +1,25 @@
 <template>
   <div class="action-bar flex a-center">
-    <v-btn class="btn add-btn" @click="addNew">+ Add</v-btn>
+    <v-btn
+      class="btn add-btn"
+      @click="addNew"
+    >
+      + Add
+    </v-btn>
 
     <div class="search-products-wrapper flex a-center main-border">
-      <img src="@/assets/images/Magnifying_glass_icon.svg" />
+      <img
+        src="@/assets/images/Magnifying_glass_icon.svg"
+        alt=""
+      >
+
       <input
+        v-model="searchTerm"
         type="text"
         class="search-products"
         placeholder="search-products"
-        v-model="searchTerm"
         oninput=""
-      />
+      >
     </div>
 
     <!-- <select
@@ -74,7 +83,7 @@
 
 <script>
 export default {
-  name: 'Action-Bar',
+  name: 'ActionBar',
   data() {
     return {
       timeout: null,

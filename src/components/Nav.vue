@@ -18,6 +18,6 @@
 
 <script>
 export default {
-  components: {},
+  name: 'Nav',
 };
 </script>

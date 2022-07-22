@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <product-details></product-details>
+    <product-details />
   </div>
 </template>
 

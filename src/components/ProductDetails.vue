@@ -1,21 +1,27 @@
 <template>
   <fieldset class="product-details flex column">
-    <legend v-if="editProduct">{{ editProduct.title }}</legend>
+    <legend v-if="editProduct">
+      {{ editProduct.title }}
+    </legend>
 
     <form
-      @submit.prevent="saveChanges"
-      class="wrapper flex column"
       v-if="editProduct"
+      class="wrapper flex column"
+      @submit.prevent="saveChanges"
     >
-      <img :src="editProduct.image || defaultUrl" alt="" class="img" />
+      <img
+        :src="editProduct.image || defaultUrl"
+        alt=""
+        class="img"
+      >
       <!-- id -->
       <label class="name-label">Id</label>
       <input
-          type="text"
-          name="product-id"
-          :value="editProduct.id"
-          @change="updateValue('id', $event)"
-      />
+        type="text"
+        name="product-id"
+        :value="editProduct.id"
+        @change="updateValue('id', $event)"
+      >
       <!-- title -->
       <label class="name-label">Title</label>
       <input
@@ -23,7 +29,7 @@
         name="product-name"
         :value="editProduct.title"
         @change="updateValue('title', $event)"
-      />
+      >
       <!-- description -->
       <label class="name-description">Description</label>
       <textarea
@@ -35,10 +41,10 @@
       <!-- category -->
       <label class="name-category">Category</label>
       <textarea
-          type="text"
-          name="product-category"
-          :value="editProduct.category"
-          @change="updateValue('category', $event)"
+        type="text"
+        name="product-category"
+        :value="editProduct.category"
+        @change="updateValue('category', $event)"
       />
       <!-- price -->
       <label class="name-label">Price</label>
@@ -49,11 +55,13 @@
           class="product-price"
           :value="editProduct.price"
           @change="updateValue('price', $event)"
-        />
+        >
         <span class="price-after">$</span>
       </div>
 
-      <button class="btn save-btn">Save</button>
+      <button class="btn save-btn">
+        Save
+      </button>
     </form>
   </fieldset>
 </template>
@@ -113,7 +121,7 @@
 <script>
 import makeId from '../utils/makeId';
 export default {
-  name: 'product-details',
+  name: 'ProductDetails',
   data() {
     return {
       editProduct: null,
