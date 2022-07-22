@@ -1,7 +1,7 @@
 <template>
 	<ul class="pagination" v-if="productListPage.length">
 		<li class="page-item">
-			<button type="button" class="page-link" v-if="page != 1" @click="page--">
+			<button type="button" class="page-link" v-if="page !== 0" @click="page--">
 				Previous
 			</button>
 		</li>
@@ -20,7 +20,7 @@
 			<button
 				type="button"
 				@click="page++"
-				v-if="page < pagesCount"
+				v-if="page < pagesCount-1"
 				class="page-link"
 			>
 				Next
