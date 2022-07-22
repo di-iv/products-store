@@ -22,6 +22,12 @@
   .details {
     flex: 1;
     text-align: left;
+    .description {
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
   }
   .btn {
     background-color: $clr3;
