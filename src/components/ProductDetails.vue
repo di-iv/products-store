@@ -1,28 +1,44 @@
 <template>
   <fieldset class="product-details flex column">
-    <legend v-if="editProduct">{{ editProduct.name }}</legend>
+    <legend v-if="editProduct">{{ editProduct.title }}</legend>
 
     <form
       @submit.prevent="saveChanges"
       class="wrapper flex column"
       v-if="editProduct"
     >
-      <img :src="editProduct.imageUrl || defaultUrl" alt="" class="img" />
-      <!-- name -->
-      <label class="name-label">Name</label>
+      <img :src="editProduct.image || defaultUrl" alt="" class="img" />
+      <!-- id -->
+      <label class="name-label">Id</label>
+      <input
+          type="text"
+          name="product-id"
+          :value="editProduct.id"
+          @change="updateValue('id', $event)"
+      />
+      <!-- title -->
+      <label class="name-label">Title</label>
       <input
         type="text"
         name="product-name"
-        :value="editProduct.name"
-        @change="updateValue('name', $event)"
+        :value="editProduct.title"
+        @change="updateValue('title', $event)"
       />
       <!-- description -->
-      <label class="name-description">Name</label>
+      <label class="name-description">Description</label>
       <textarea
         type="text"
         name="product-description"
         :value="editProduct.description"
         @change="updateValue('description', $event)"
+      />
+      <!-- category -->
+      <label class="name-category">Category</label>
+      <textarea
+          type="text"
+          name="product-category"
+          :value="editProduct.category"
+          @change="updateValue('category', $event)"
       />
       <!-- price -->
       <label class="name-label">Price</label>
