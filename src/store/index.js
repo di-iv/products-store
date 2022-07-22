@@ -52,7 +52,7 @@ export default new Vuex.Store({
     },
     selectedProduct({ products, selectedProductId }) {
       if (!selectedProductId) return null;
-      const targetProduct = products.find((p) => p.id === selectedProductId);
+      const targetProduct = products.find((p) => p.id == selectedProductId);
       return targetProduct;
     },
     getPaginationData({ products, filteredProducts, limit, page }) {
@@ -81,8 +81,8 @@ export default new Vuex.Store({
     },
     updateProducts({ products }, product) {
       //check if idx exists...if yes override else push
-      const productIdx = products.findIndex((p) => p.id === product.id);
-      if (productIdx === -1) products.unshift(product);
+      const productIdx = products.findIndex((p) => p.id == product.id);
+      if (productIdx == -1) products.unshift(product);
       Vue.set(products, productIdx, product);
     },
     setSearchTerm(state, newSearchTerm) {
