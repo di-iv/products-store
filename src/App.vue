@@ -17,7 +17,7 @@
 </style>
 
 <script>
-import myNav from '@/components/Nav';
+import myNav from '@/components/TheNav';
 export default {
   components: { myNav },
 };
