@@ -27,7 +27,9 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('getProducts')
+    if (this.$store.state.products.length === 0) {
+      this.$store.dispatch('getProducts')
+    }
   },
 };
 </script>
