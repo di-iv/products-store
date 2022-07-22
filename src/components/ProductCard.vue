@@ -5,7 +5,7 @@
       <h4 class="title">{{ product.name }}</h4>
       <p class="description">{{ product.description }}</p>
     </div>
-    <button class="btn" @click="setSelectedProduct">Details</button>
+    <router-link class="btn" :to="{name: 'Product', params: {id: product.id}}">Details</router-link>
   </div>
 </template>
 
