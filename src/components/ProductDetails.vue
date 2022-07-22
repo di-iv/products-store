@@ -144,6 +144,9 @@ export default {
         this.editProduct.id = makeId();
       }
       this.$store.commit('updateProducts', this.editProduct);
+      if (this.$route.params.id) {
+        this.$router.push({name: 'Home'})
+      }
     },
   },
 };
