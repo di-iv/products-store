@@ -1,6 +1,8 @@
 <template>
   <div class="nav flex a-center main-border">
-    <h1>My Store</h1>
+    <router-link to="/">
+      <h1>My Store</h1>
+    </router-link>
   </div>
 </template>
 
