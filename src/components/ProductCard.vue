@@ -7,7 +7,7 @@
     >
     <div class="details flex column j-start">
       <h4 class="title">
-        {{ product.name }}
+        {{ product.title }}
       </h4>
       <p class="description">
         {{ product.description }}
