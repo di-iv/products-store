@@ -51,6 +51,7 @@
       <div class="flex">
         <input
           type="number"
+          step="0.01"
           name="product-price"
           class="product-price"
           :value="editProduct.price"
