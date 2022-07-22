@@ -43,7 +43,7 @@ export default new Vuex.Store({
       }
       if (!state.filteredProducts.length) page = 0;
       state.filteredProducts = products.filter(
-        (p) => p.name.includes(searchTerm) || p.description.includes(searchTerm)
+        (p) => p.title.includes(searchTerm) || p.description.includes(searchTerm)
       );
 
       const filteredPage = paginate(state.filteredProducts, limit, page);

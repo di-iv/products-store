@@ -18,7 +18,7 @@
         type="text"
         class="search-products"
         placeholder="search-products"
-        oninput=""
+        @input="search"
       >
     </div>
   </div>
@@ -73,6 +73,9 @@ export default {
     addNew() {
       this.$store.commit('setSelectedProduct', null);
     },
+    search() {
+      this.$store.commit('setSearchTerm', this.searchTerm)
+    }
   },
 };
 </script>
